@@ -1,0 +1,14 @@
+{
+    "name": "fun-run-monorepo",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "start:backend": "npm run start:dev --workspace=apps/backend-server",
+        "start:mobile": "npm run start --workspace=apps/mobile-app",
+        "build:backend": "npm run build --workspace=apps/backend-server"
+    }
+}
