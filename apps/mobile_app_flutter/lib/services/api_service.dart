@@ -1,10 +1,16 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter/foundation.dart';
 
 class ApiService {
   // For Chrome/Web, localhost works. For Android Emulator use '10.0.2.2'.
   // If you are testing on a real device, use your PC's LAN IP.
-  static const String baseUrl = 'http://localhost:3000';
+  // For Chrome/Web, localhost works. For Android Emulator use '10.0.2.2'.
+  // If you are testing on a real device, use your PC's LAN IP.
+  static String get baseUrl {
+    if (kIsWeb) return 'http://localhost:3000';
+    return 'http://10.0.2.2:3000';
+  }
 
   static Future<Map<String, dynamic>?> loginOrSignup(String nickname) async {
     try {

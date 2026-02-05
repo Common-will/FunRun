@@ -15,13 +15,13 @@ export class Run {
     @Column({ type: 'float', default: 0 })
     distance: number;
 
-    @Column({ type: 'jsonb', nullable: true })
+    @Column({ type: 'simple-json', nullable: true })
     path: { latitude: number; longitude: number; timestamp: number }[];
 
     @Column({ default: 'ACTIVE' }) // ACTIVE, COMPLETED, CANCELLED
     status: string;
 
-    @Column({ type: 'timestamp', nullable: true })
+    @Column({ type: 'datetime', nullable: true })
     endedAt: Date;
 
     @CreateDateColumn()

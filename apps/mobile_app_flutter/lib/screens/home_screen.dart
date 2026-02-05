@@ -66,9 +66,9 @@ class _HomeScreenState extends State<HomeScreen> {
     _totalDistance = (user['totalDistance'] ?? 0).toDouble();
 
     // Update Max XP based on Tier (Simple logic)
-    if (_tier == 'BRONZE')
+    if (_tier == 'BRONZE') {
       _maxXp = 1000;
-    else if (_tier == 'SILVER')
+    } else if (_tier == 'SILVER')
       _maxXp = 5000;
     else if (_tier == 'GOLD')
       _maxXp = 10000;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
@@ -32,7 +33,9 @@ class _MapScreenState extends State<MapScreen> {
   // Backend Config
   // Backend Config
   // For Chrome/Web, localhost works. For Android Emulator use '10.0.2.2'.
-  final String _backendUrl = 'http://localhost:3000';
+  final String _backendUrl = kIsWeb
+      ? 'http://localhost:3000'
+      : 'http://10.0.2.2:3000';
 
   @override
   void initState() {
